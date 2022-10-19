@@ -1,7 +1,7 @@
 from pprint import pprint
 import requests
 
-
+# Задача 1
 url = 'https://akabab.github.io/superhero-api/api/all.json'
 resp = requests.get(url)
 all_heroes = resp.json()
@@ -14,6 +14,7 @@ for hero in all_heroes:
 print(max_intelligence)
 
 
+# Задача 2
 class YaUploader:
     def __init__(self, token: str):
         self.token = token
@@ -40,3 +41,9 @@ if __name__ == '__main__':
     token = ''
     uploader = YaUploader(token)
     pprint(uploader.upload('Netology/test1710.txt', 'test1710.txt'))
+
+
+# Задача 3
+url = 'https://api.stackexchange.com/2.3/questions?fromdate=1665878400&todate=1665964800&order=desc&sort=activity&tagged=Python&site=stackoverflow'
+resp = requests.get(url)
+pprint(resp.json())
